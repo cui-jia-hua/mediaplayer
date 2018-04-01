@@ -26,5 +26,22 @@ namespace mediaplayer
         {
             this.InitializeComponent();
         }
+
+        private void NV_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            //title.Text = args.InvokedItem.ToString();
+            switch (args.InvokedItem)
+            {
+                case "picture":
+                    contentFrame.Navigate(typeof(pic));
+                    break;
+                case "music":
+                    contentFrame.Navigate(typeof(music));
+                    break;
+                case "video":
+                    contentFrame.Navigate(typeof(video));
+                    break;
+            }
+        }
     }
 }

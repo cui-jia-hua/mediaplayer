@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="mediaplayer.video"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:mediaplayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock FontSize="36" Margin="25">请选择文件：</TextBlock>
+            <TextBlock Name="path" FontSize="30"></TextBlock>
+            <Button Content="浏览我的电脑" FontSize="28" Click="ButtonBase_OnClickAsync"></Button>
+        </StackPanel>
+        <MediaPlayerElement Name="MediaPlayerElement" Grid.Row="1" HorizontalAlignment="Stretch"   AreTransportControlsEnabled="true" ></MediaPlayerElement>
+        
+    </Grid>
+</Page>

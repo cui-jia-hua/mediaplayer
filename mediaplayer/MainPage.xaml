@@ -5,9 +5,32 @@
     xmlns:local="using:mediaplayer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" >
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <TextBlock FontSize="30" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="15" Name="title">简单的播放器</TextBlock>
+        </RelativePanel>
+        <NavigationView Margin="0,12,0,0" Grid.Row="1" Name="NV" ItemInvoked="NV_OnItemInvoked"
+                        IsSettingsVisible="true">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Camera" Content="picture" Tag="picPage" />
+                <NavigationViewItem Icon="Next" Content="music" Tag="musicPage" />
+                <NavigationViewItem Icon="Play" Content="video" Tag="videoPage" />
+            </NavigationView.MenuItems>
+            <Frame Name="contentFrame">
 
+            </Frame>
+            <NavigationView.PaneFooter>
+                <TextBlock FontFamily="bold" FontSize="32" Margin="10,0,0,0">
+                    @ cuijiahua
+                </TextBlock>
+            </NavigationView.PaneFooter>
+        </NavigationView>
     </Grid>
 </Page>
